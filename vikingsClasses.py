@@ -218,13 +218,13 @@ class War():
         """
         try:
             random_saxon = random.choice(self.saxonArmy)
-        except IndexError:
-            raise ValueError("There is no one on the saxon army!")
+        except IndexError as e:
+            raise ValueError("There is no one on the saxon army!") from e
     
         try:
             random_viking = random.choice(self.vikingArmy)
-        except IndexError:
+        except IndexError as e:
 
-            raise ValueError("There is no one on the viking army!")
+            raise ValueError("There is no one on the viking army!") from e
         
         return (random_saxon, random_viking)
