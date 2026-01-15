@@ -74,10 +74,7 @@ class War():
         
         # remove dead saxons from army
         if "died"in message:
-            # TODO: find the saxon that died
-            # saxon_index = 
-            
-            removed_saxon = self.saxonArmy.remove(random_saxon)
+            self.saxonArmy.remove(random_saxon)
 
         return message
 
@@ -91,9 +88,7 @@ class War():
         
         # remove dead saxons from army
         if "died"in message:
-            # TODO: find the viking that died
-
-            removed_viking = self.vikingArmy.remove(random_viking)
+            self.vikingArmy.remove(random_viking)
 
         return message
 
