@@ -65,12 +65,12 @@ for i_soldier in range(saxon_army_size):
 
 total_attacks = 0
 armies = ["vikings", "saxons"]
-prob_peace = 0.05
+prob_peace = 0.02
 peace = False
 
 with Progress() as progress:
     n_alive_vikings = progress.add_task("[red]Viking Army Soldiers", total=viking_army_size)
-    n_alive_saxons = progress.add_task("[blue]Saxon Army Soldiers", total=saxon_army_size)
+    n_alive_saxons = progress.add_task("[green]Saxon Army Soldiers", total=saxon_army_size)
 
     while huge_war.showStatus() == "Vikings and Saxons are still in the thick of battle." and not peace:
         attacking_army = random.choice(armies)
@@ -82,7 +82,7 @@ with Progress() as progress:
 
             else:
                 message = huge_war.saxonAttack()
-                progress.console.print("[blue]" + message)
+                progress.console.print("[green]" + message)
         except: 
             pass
 
@@ -98,9 +98,9 @@ with Progress() as progress:
 
             if abs(len(huge_war.vikingArmy)-len(huge_war.saxonArmy)) <= 10:
                 peace = True
-                progress.console.print("[bold green]We reached peace!!!!!")
+                progress.console.print("[bold white]We reached peace!!!!!")
                 break
 
-
-
+        
+        progress.console.print("[yellow]" + huge_war.showStatus())
 
